@@ -15,6 +15,8 @@ namespace projectujra
         //AboutBox1 boxx = new AboutBox1();
         public Form2()
         {
+
+            //asd
             InitializeComponent();
             texts();
 
