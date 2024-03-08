@@ -31,6 +31,42 @@ namespace projectujra
             {
                 this.Close();
             };
+            numericUpDown1.ValueChanged += (s, e) =>
+            {
+                if (radioButton1.Checked)
+                {
+                    int price = 620 * Convert.ToInt32(numericUpDown1.Value);
+                    textBox3.Text = price.ToString();
+                }
+                else if (radioButton2.Checked)
+                {
+                   
+                    int price = 750 * Convert.ToInt32(numericUpDown1.Value);
+                    textBox3.Text = price.ToString();
+                }
+                else if (radioButton3.Checked)
+                {
+                    
+                    int price = 990 * Convert.ToInt32(numericUpDown1.Value);
+                    textBox3.Text = price.ToString();
+                }
+            };
+            radioButton1.CheckedChanged += (s, e) =>
+            {
+                textBox3.Text = "";
+                numericUpDown1.Value = 0;
+            };
+            radioButton2.CheckedChanged += (s, e) =>
+            {
+                textBox3.Text = "";
+                numericUpDown1.Value = 0;
+            };
+            radioButton3.CheckedChanged += (s, e) =>
+            {
+                textBox3.Text = "";
+                numericUpDown1.Value = 0;
+            };
+
 
 
 
