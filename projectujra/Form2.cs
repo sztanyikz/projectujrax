@@ -50,21 +50,104 @@ namespace projectujra
                     int price = 990 * Convert.ToInt32(numericUpDown1.Value);
                     textBox3.Text = price.ToString();
                 }
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
+            };
+            numericUpDown2.ValueChanged += (s, e) =>
+            {
+                if (radioButton4.Checked)
+                {
+                    int price = 650 * Convert.ToInt32(numericUpDown2.Value);
+                    textBox5.Text = price.ToString();
+                }
+                else if (radioButton5.Checked)
+                {
+
+                    int price = 760 * Convert.ToInt32(numericUpDown2.Value);
+                    textBox5.Text = price.ToString();
+                }
+                else if (radioButton6.Checked)
+                {
+
+                    int price = 1200 * Convert.ToInt32(numericUpDown2.Value);
+                    textBox5.Text = price.ToString();
+                }
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
+            };
+            numericUpDown3.ValueChanged += (s, e) =>
+            {
+                if (radioButton7.Checked)
+                {
+                    int price = 710 * Convert.ToInt32(numericUpDown3.Value);
+                    textBox7.Text = price.ToString();
+                }
+                else if (radioButton5.Checked)
+                {
+
+                    int price = 880 * Convert.ToInt32(numericUpDown3.Value);
+                    textBox7.Text = price.ToString();
+                }
+                else if (radioButton6.Checked)
+                {
+
+                    int price = 1250 * Convert.ToInt32(numericUpDown3.Value);
+                    textBox7.Text = price.ToString();
+                }
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
             };
             radioButton1.CheckedChanged += (s, e) =>
             {
                 textBox3.Text = "";
                 numericUpDown1.Value = 0;
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
             };
             radioButton2.CheckedChanged += (s, e) =>
             {
                 textBox3.Text = "";
                 numericUpDown1.Value = 0;
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
             };
             radioButton3.CheckedChanged += (s, e) =>
             {
                 textBox3.Text = "";
                 numericUpDown1.Value = 0;
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
+            };
+            radioButton4.CheckedChanged += (s, e) =>
+            {
+                textBox5.Text = "";
+                numericUpDown2.Value = 0;
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
+            };
+            radioButton5.CheckedChanged += (s, e) =>
+            {
+                textBox5.Text = "";
+                numericUpDown2.Value = 0;
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
+            };
+            radioButton6.CheckedChanged += (s, e) =>
+            {
+                textBox5.Text = "";
+                numericUpDown2.Value = 0;
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
+            };
+            radioButton7.CheckedChanged += (s, e) =>
+            {
+                textBox7.Text = "";
+                numericUpDown3.Value = 0;
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
+
+            };
+            radioButton8.CheckedChanged += (s, e) =>
+            {
+                textBox7.Text = "";
+                numericUpDown3.Value = 0;
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
+            };
+            radioButton9.CheckedChanged += (s, e) =>
+            {
+                textBox7.Text = "";
+                numericUpDown3.Value = 0;
+                textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7)).ToString();
             };
 
 
