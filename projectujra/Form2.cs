@@ -94,56 +94,56 @@ namespace projectujra
             };
             radioButton1.CheckedChanged += (s, e) =>
             {
-                textBox3.Text = "";
+                textBox3.Text = "0";
                 numericUpDown1.Value = 0;
                 textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7.Text)).ToString();
             };
             radioButton2.CheckedChanged += (s, e) =>
             {
-                textBox3.Text = "";
+                textBox3.Text = "0";
                 numericUpDown1.Value = 0;
                 textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7.Text)).ToString();
             };
             radioButton3.CheckedChanged += (s, e) =>
             {
-                textBox3.Text = "";
+                textBox3.Text = "0";
                 numericUpDown1.Value = 0;
                 textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7.Text)).ToString();
             };
             radioButton4.CheckedChanged += (s, e) =>
             {
-                textBox5.Text = "";
+                textBox5.Text = "0";
                 numericUpDown2.Value = 0;
                 textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7.Text)).ToString();
             };
             radioButton5.CheckedChanged += (s, e) =>
             {
-                textBox5.Text = "";
+                textBox5.Text = "0";
                 numericUpDown2.Value = 0;
                 textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7.Text)).ToString();
             };
             radioButton6.CheckedChanged += (s, e) =>
             {
-                textBox5.Text = "";
+                textBox5.Text = "0";
                 numericUpDown2.Value = 0;
                 textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7.Text)).ToString();
             };
             radioButton7.CheckedChanged += (s, e) =>
             {
-                textBox7.Text = "";
+                textBox7.Text = "0";
                 numericUpDown3.Value = 0;
                 textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7.Text)).ToString();
 
             };
             radioButton8.CheckedChanged += (s, e) =>
             {
-                textBox7.Text = "";
+                textBox7.Text = "0";
                 numericUpDown3.Value = 0;
                 textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7.Text)).ToString();
             };
             radioButton9.CheckedChanged += (s, e) =>
             {
-                textBox7.Text = "";
+                textBox7.Text = "0";
                 numericUpDown3.Value = 0;
                 textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7.Text)).ToString();
             };
@@ -154,6 +154,10 @@ namespace projectujra
         }
         public void texts()
         {
+            textBox3.Text = "0";
+            textBox5.Text = "0";
+            textBox7.Text = "0";
+
             groupBox1.Text = "";
             groupBox2.Text = "";
             groupBox3.Text = "";
