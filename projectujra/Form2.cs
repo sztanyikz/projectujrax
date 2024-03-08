@@ -19,6 +19,7 @@ namespace projectujra
             //asd
             InitializeComponent();
             texts();
+            
 
 
             //yippee
@@ -126,6 +127,16 @@ namespace projectujra
              * textbox9
              textbox10
             textbox11*/
+
+
+
+
+            textBox1.Enabled = false;
+            textBox8.Enabled = false;
+            textBox9.Enabled = false;
+            textBox10.Enabled = false;
+            textBox11.Enabled = false;
+
         }
     }
 }

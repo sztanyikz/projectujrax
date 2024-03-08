@@ -24,6 +24,7 @@ namespace projectujra
 
                     Form2 order = new Form2();
                     order.Show();
+                    this.Hide();
                 }
                 else
                 {
