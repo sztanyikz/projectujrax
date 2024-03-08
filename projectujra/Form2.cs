@@ -16,13 +16,11 @@ namespace projectujra
         public Form2()
         {
 
-            //asd
+            
             InitializeComponent();
             texts();
             
 
-
-            //yippee
             button1.Click += (s, e) =>
             {
                 //boxx.Show();
