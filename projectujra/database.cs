@@ -43,15 +43,26 @@ namespace projectujra
         public string Username { get; set; }
         [Required]
         public string Pizzaname1 { get; set; }
+        [Required]
         public string Pizzaname2 { get; set; }
+        [Required]
         public string Pizzaname3 { get; set; }
+        [Required]
         public Int32 Pizza1size { get; set; }
+        [Required]
         public Int32 Pizza2size { get; set; }
+        [Required]
         public Int32 Pizza3size { get; set; }
+        [Required]
         public Int32 Pizza1count { get; set; }
+        [Required]
         public Int32 Pizza2count { get; set; }
+        [Required]
         public Int32 Pizza3count { get; set; }
         [Required]
         public Int32 Summa { get; set; }
+        public DateTime Date { get; set; }
+
+
     }
 }

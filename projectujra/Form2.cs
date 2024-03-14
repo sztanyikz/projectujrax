@@ -13,9 +13,12 @@ namespace projectujra
     public partial class Form2 : Form
     {
         //AboutBox1 boxx = new AboutBox1();
-        public Form2()
+        string userr;
+        Model model;
+        public Form2(string user, Model mod)
         {
-
+            model = mod;
+            userr = user;
             
             InitializeComponent();
             texts();
@@ -148,9 +151,54 @@ namespace projectujra
                 textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7.Text)).ToString();
             };
 
+
             button3.Click += (s, e) =>
             {
-                
+                int a = 0;
+                int b = 0;
+                int c = 0;
+                if (radioButton1.Checked)
+                {
+                    a = 28;
+
+                }
+                else if(radioButton2.Checked)
+                {
+                    b = 32;
+                }
+                else if(radioButton3.Checked)
+                {
+                    c = 45;
+                }
+                if (radioButton4.Checked)
+                {
+                    a = 28;
+                }
+                else if (radioButton5.Checked)
+                {
+                    b = 32;
+                }
+                else if (radioButton6.Checked)
+                {
+                    c = 45;
+                } 
+                if (radioButton7.Checked)
+                {
+                    a = 28;
+                }
+                else if (radioButton8.Checked)
+                {
+                    b = 32;
+                }
+                else if (radioButton9.Checked)
+                {
+                    c = 45;
+                }
+                //adatbázisba elmentés
+                model.save( user ,Convert.ToString(label2), Convert.ToString(label3), Convert.ToString(label4), a, b, c, Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value), Convert.ToInt32(numericUpDown3.Value), Convert.ToInt32(textBox1.Text));
+                //model függvény, hogy az utolsó hozzá adott elemnek mi az id-ja meg a többi adata
+
+                listBox1.Items.Add(model.lastorderid().Id + "rendelés" + model.lastordersum().Summa + "FT");
             };
 
             button4.Click += (s, e) =>

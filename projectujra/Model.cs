@@ -15,9 +15,15 @@ namespace projectujra
 
         }
 
-        public int id(string vmi)
+        public Order lastorderid()
         {
-            
+            return mydb.order.OrderBy(x => x.Id).Last();
+
+        }
+
+        public Order lastordersum()
+        {
+            return mydb.order.OrderBy(x => x.Summa).Last();
 
         }
 
@@ -25,7 +31,7 @@ namespace projectujra
         {
 
                 using var trx = mydb.Database.BeginTransaction();
-                mydb.order.Add(new Order { Username= Username ,Pizzaname1 = Pizzaname1,  Pizzaname2 = Pizzaname2,  Pizzaname3 = Pizzaname3,  Pizza1size = Pizza1size,  Pizza2size = Pizza2size,  Pizza3size = Pizza3size,  Pizza1count = Pizza1count,  Pizza2count = Pizza2count,  Pizza3count = Pizza3count,  Summa = Summa });
+                mydb.order.Add(new Order { Username= Username ,Pizzaname1 = Pizzaname1,  Pizzaname2 = Pizzaname2,  Pizzaname3 = Pizzaname3,  Pizza1size = Pizza1size,  Pizza2size = Pizza2size,  Pizza3size = Pizza3size,  Pizza1count = Pizza1count,  Pizza2count = Pizza2count,  Pizza3count = Pizza3count,  Summa = Summa , Date = DateTime.Now});
                 trx.Commit();
                 mydb.SaveChanges();
               

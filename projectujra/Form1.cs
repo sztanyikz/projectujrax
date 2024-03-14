@@ -22,7 +22,7 @@ namespace projectujra
                 if (model.SigIn(textBox1.Text, textBox2.Text))
                 {
 
-                    Form2 order = new Form2();
+                    Form2 order = new Form2(textBox1.Text, model);
                     order.Show();
                     this.Hide();
                 }
