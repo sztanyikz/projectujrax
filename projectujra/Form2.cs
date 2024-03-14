@@ -148,6 +148,29 @@ namespace projectujra
                 textBox1.Text = (Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) + Convert.ToInt32(textBox7.Text)).ToString();
             };
 
+            button3.Click += (s, e) =>
+            {
+                
+            };
+
+            button4.Click += (s, e) =>
+            {
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                radioButton5.Checked = false;
+                radioButton6.Checked = false;
+                radioButton7.Checked = false;
+                radioButton8.Checked = false;
+                radioButton9.Checked = false;
+                textBox3.Text = "0";
+                numericUpDown1.Value = 0;
+                textBox5.Text = "0";
+                numericUpDown2.Value = 0;
+                textBox7.Text = "0";
+                numericUpDown3.Value = 0;
+            };
 
 
 
