@@ -14,11 +14,32 @@ namespace projectujra
             mydb = persistence;
 
         }
-
+        public void clear()
+        {
+            mydb.order.RemoveRange(mydb.order);
+            mydb.SaveChanges();
+        }
+        public void delete(int id)
+        {
+            mydb.order.Remove(mydb.order.Where(x => x.Id == id).First());
+            mydb.SaveChanges();
+        }
         public Order lastorderid()
         {
             return mydb.order.OrderBy(x => x.Id).Last();
 
+        }
+        public int sumsum()
+        {
+            return mydb.order.Sum(x => x.Summa);
+        }
+        public Order vmi(int id)
+        {
+            return mydb.order.Where(x=>x.Id == id).First();
+        }
+        public Order vmi2(int osszeg)
+        {
+            return mydb.order.Where(x => x.Summa == osszeg).First();
         }
 
         public Order lastordersum()

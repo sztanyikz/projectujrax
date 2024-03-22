@@ -19,10 +19,10 @@ namespace projectujra
         {
             model = mod;
             userr = user;
-            
+
             InitializeComponent();
             texts();
-            
+
 
             button1.Click += (s, e) =>
             {
@@ -30,7 +30,8 @@ namespace projectujra
             };
             button2.Click += (s, e) =>
             {
-                this.Close();
+                model.clear();
+                Application.Exit();
             };
             numericUpDown1.ValueChanged += (s, e) =>
             {
@@ -41,13 +42,13 @@ namespace projectujra
                 }
                 else if (radioButton2.Checked)
                 {
-                   
+
                     int price = 750 * Convert.ToInt32(numericUpDown1.Value);
                     textBox3.Text = price.ToString();
                 }
                 else if (radioButton3.Checked)
                 {
-                    
+
                     int price = 990 * Convert.ToInt32(numericUpDown1.Value);
                     textBox3.Text = price.ToString();
                 }
@@ -153,53 +154,70 @@ namespace projectujra
 
 
             button3.Click += (s, e) =>
+             {
+                 int a = 0;
+                 int b = 0;
+                 int c = 0;
+                 if (radioButton1.Checked)
+                 {
+                     a = 28;
+
+                 }
+                 else if (radioButton2.Checked)
+                 {
+                     b = 32;
+                 }
+                 else if (radioButton3.Checked)
+                 {
+                     c = 45;
+                 }
+                 if (radioButton4.Checked)
+                 {
+                     a = 28;
+                 }
+                 else if (radioButton5.Checked)
+                 {
+                     b = 32;
+                 }
+                 else if (radioButton6.Checked)
+                 {
+                     c = 45;
+                 }
+                 if (radioButton7.Checked)
+                 {
+                     a = 28;
+                 }
+                 else if (radioButton8.Checked)
+                 {
+                     b = 32;
+                 }
+                 else if (radioButton9.Checked)
+                 {
+                     c = 45;
+                 }
+                 //adatbázisba elmentés
+                 model.save(user, Convert.ToString(label2), Convert.ToString(label3), Convert.ToString(label4), a, b, c, Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value), Convert.ToInt32(numericUpDown3.Value), Convert.ToInt32(textBox1.Text));
+                 //model függvény, hogy az utolsó hozzá adott elemnek mi az id-ja meg a többi adata
+
+                 listBox1.Items.Add(model.lastorderid().Id + " " + "rendelés" + " " + model.lastorderid().Summa + " " + "FT");
+                 textBox8.Text = model.sumsum().ToString();
+             };
+            listBox1.SelectedIndexChanged += (s, e) =>
             {
-                int a = 0;
-                int b = 0;
-                int c = 0;
-                if (radioButton1.Checked)
+                if (listBox1.SelectedItem == null)
                 {
-                    a = 28;
+                  
+                }
+                else 
+                {
 
+                    Order aa = model.vmi(Convert.ToInt32(listBox1.SelectedItem.ToString().Split(" ")[0]));
+                    textBox9.Text = aa.Id.ToString();
+                    Order aaa = model.vmi2(Convert.ToInt32(listBox1.SelectedItem.ToString().Split(" ")[2]));
+                    textBox10.Text = aa.Summa.ToString();
                 }
-                else if(radioButton2.Checked)
-                {
-                    b = 32;
-                }
-                else if(radioButton3.Checked)
-                {
-                    c = 45;
-                }
-                if (radioButton4.Checked)
-                {
-                    a = 28;
-                }
-                else if (radioButton5.Checked)
-                {
-                    b = 32;
-                }
-                else if (radioButton6.Checked)
-                {
-                    c = 45;
-                } 
-                if (radioButton7.Checked)
-                {
-                    a = 28;
-                }
-                else if (radioButton8.Checked)
-                {
-                    b = 32;
-                }
-                else if (radioButton9.Checked)
-                {
-                    c = 45;
-                }
-                //adatbázisba elmentés
-                model.save( user ,Convert.ToString(label2), Convert.ToString(label3), Convert.ToString(label4), a, b, c, Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value), Convert.ToInt32(numericUpDown3.Value), Convert.ToInt32(textBox1.Text));
-                //model függvény, hogy az utolsó hozzá adott elemnek mi az id-ja meg a többi adata
-
-                listBox1.Items.Add(model.lastorderid().Id + "rendelés" + model.lastordersum().Summa + "FT");
             };
+
 
             button4.Click += (s, e) =>
             {
@@ -218,6 +236,16 @@ namespace projectujra
                 numericUpDown2.Value = 0;
                 textBox7.Text = "0";
                 numericUpDown3.Value = 0;
+            };
+            button6.Click += (s, e) =>
+            {
+                if (listBox1.SelectedItem.ToString() != "")
+                {
+                    model.delete(Convert.ToInt32(listBox1.SelectedItem.ToString().Split(" ")[0]));
+                    int index = listBox1.SelectedIndex;
+                    listBox1.SelectedIndex = -1;
+                    listBox1.Items.RemoveAt(index);
+                }
             };
 
 
@@ -261,7 +289,7 @@ namespace projectujra
             this.BackColor = Color.FromArgb(192, 64, 0);
             tabPage1.BackColor = Color.FromArgb(255, 192, 128);
             tabPage2.BackColor = Color.FromArgb(255, 192, 128);
-           // groupBox8.BackgroundImage = System.Drawing.Image.FromFile("pizza.jpeg");
+            // groupBox8.BackgroundImage = System.Drawing.Image.FromFile("pizza.jpeg");
             groupBox8.BackgroundImageLayout = ImageLayout.Stretch;
             tabPage1.Text = "Pizzák";
             tabPage2.Text = "Rendelések";
@@ -314,7 +342,7 @@ namespace projectujra
             label14.Text = "Azonosító";
             label15.Text = "Összeg";
             label16.Text = "Dátum";
-            button6.Text = "Rendelést elment";
+            button6.Text = "Töröl";
             /*textbox8
              * textbox9
              textbox10
